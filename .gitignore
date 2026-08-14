@@ -1,0 +1,30 @@
+# Secrets — never commit real API keys. Only .env.example (no real
+# values) is tracked; .env itself is where your real keys live locally
+# and on your hosting platform's environment-variable settings.
+.env
+.env.*
+!.env.example
+
+# Generated at ingest/benchmark time — regenerable from data/*.jsonl via
+# scripts/ingest.py, scripts/benchmark.py, scripts/demo_cases.py.
+# Excluded because a real MSMARCO-XI index can be large, and none of
+# this is source content.
+data/index.pkl
+data/index.embedder.pkl
+data/*.eval_queries.jsonl
+data/latency_report.json
+data/demo_results.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# OS / editor cruft
+.DS_Store
+.idea/
+.vscode/

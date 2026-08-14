@@ -1,0 +1,28 @@
+# Core
+numpy>=1.26
+scipy>=1.11
+scikit-learn>=1.3
+requests>=2.31
+python-dotenv>=1.0
+
+# Optional but recommended for production-quality embeddings/index
+# (the pipeline works without these — falls back to built-in TF-IDF
+#  vectorizer + in-memory cosine index — but swap these in for scale/quality)
+sentence-transformers>=2.6   # better semantic embeddings
+faiss-cpu>=1.8                # faster ANN index for large corpora
+
+# Dataset loading (MS MARCO-XL from HuggingFace)
+datasets>=2.19
+huggingface_hub>=0.23
+
+# LLM generation backend (pick the one you have a key for; both supported)
+anthropic>=0.34
+openai>=1.30
+
+# Serving the live demo endpoint
+fastapi>=0.111
+uvicorn[standard]>=0.30
+python-multipart>=0.0.9   # for audio file uploads
+
+# Nice-to-haves
+tqdm>=4.66
